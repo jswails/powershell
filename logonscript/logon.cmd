@@ -1,0 +1,2 @@
+powershell.exe -windowstyle hidden -executionpolicy unrestricted -file C:\packages\logonscript\logonscript.ps1
+powershell.exe -windowstyle hidden -executionpolicy unrestricted -file c:\packages\logonscript\checkuserla.ps1
