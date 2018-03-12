@@ -1,0 +1,71 @@
+<?php
+# specify the location of our directory server and
+# attempt to establish a connection (note we're not binding yet)
+
+$ds = ldap_connect("ldap.corp.stateauto.com");
+
+if ( $ds ) {
+   # form the LDAP distinguished name (DN) that we'll bind
+   # with from the POST variables $uid and $password
+
+   $uid = $_POST['uid'];
+   $password = $_POST['password'];
+   $userdn = "uid=$uid,OU=Managed,OU=User Objects,DC=corp,DC=stateauto,DC=com";
+
+# attept to bind to the directory server
+
+   $result = ldap_bind( $ds, $userdn, $password );
+
+# search the accounts branch for the entry (uid=$uid) and
+   # save the results in an array called $accounts_searchResult
+
+   $accounts_searchResult = ldap_search( $ds, "OU=Managed,OU=User Objects,DC=corp,DC=stateauto,DC=com", "uid=$uid" );
+
+# the elements of the searchResult array are ldap entries. Grab the
+   # first entry off the array and examine it
+
+   $entry = ldap_first_entry( $ds, $accounts_searchResult );
+
+  while ( $entry ) {
+      # let's find the DN for this specific entry
+
+      $dn = ldap_get_dn( $ds, $entry );
+
+      echo "dn: $dn<br>n";
+
+ # let's examine all of the attributes associated with this entry
+
+      $attrs = ldap_get_attributes( $ds, $entry );
+
+echo "<ul>";
+      for ( $i = 0; $i < $attrs['count']; $i++ ) {
+         # the array $attrs will use the attribute name (a string) as the
+         # subscript notation. Ex: $attrs[displayname] = 'john doe'
+
+         echo "<li>$attrs[$i]n";
+
+         # some attributes can be multivalued
+         # (ie: affliation can be either student, staff, or both student and staff)
+         # the value of the attributes is stored in the second dimension of the
+         # $attr array: $arrt['attribute_name'][0 .. N] = ( value0, value1, ... valueN )
+
+         echo "<ul>n";
+
+         for ( $j = 0; $j < $attrs[$attrs[$i]]['count']; $j++ ) {
+            # print out all of the attributes
+            echo "<li>" . $attrs[$attrs[$i]][$j] . "</li>";
+         }
+
+         echo "</ul></li>n";
+
+      }
+
+      echo "</ul>";
+  # if there are more entries in the search result, show the next one
+      $entry = ldap_next_entry( $ds, $entry );
+}
+
+   ldap_free_result( $accounts_searchResult );
+   ldap_unbind( $ds );
+}
+?>
