@@ -1,0 +1,45 @@
+// "AS-IS" sample MOF file for returning the two uninstall registry subkeys
+
+// Unsupported, provided purely as a sample
+
+// Requires compilation. Example: mofcomp.exe sampleproductslist.mof
+
+// Implements sample classes: "SampleProductList" and "SampleProductlist32" 
+
+//   (for 64-bit systems with 32-bit software)
+
+ 
+
+#PRAGMA AUTORECOVER
+
+ 
+
+[dynamic, provider("RegProv"),
+
+ProviderClsid("{fe9af5c0-d3b6-11ce-a5b6-00aa00680c3f}"),ClassContext("local|HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall")]
+
+class SampleProductsList {
+
+[key] string KeyName;
+
+[read, propertycontext("DisplayName")] string DisplayName;
+
+[read, propertycontext("DisplayVersion")] string DisplayVersion;
+
+};
+
+ 
+
+[dynamic, provider("RegProv"),
+
+ProviderClsid("{fe9af5c0-d3b6-11ce-a5b6-00aa00680c3f}"),ClassContext("local|HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432node\\Microsoft\\Windows\\CurrentVersion\\Uninstall")]
+
+class SampleProductsList32 {
+
+[key] string KeyName;
+
+[read, propertycontext("DisplayName")] string DisplayName;
+
+[read, propertycontext("DisplayVersion")] string DisplayVersion;
+
+};

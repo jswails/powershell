@@ -1,0 +1,8 @@
+sadc1asmcp1,,0,0,NaN
+sadc1asmcp2,,0,0,NaN
+sadc1aspsp1,,0,0,NaN
+sadc1aspsp2,,0,0,NaN
+sacolasmcd1,,0,0,NaN
+sadc1asmcd1,,0,0,NaN
+sacolaspsd1,,0,0,NaN
+sadc1aspsd1,,0,0,NaN
