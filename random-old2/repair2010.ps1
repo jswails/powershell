@@ -1,0 +1,1 @@
+﻿\\sadc1cm12pkgp1\packages\microsoft\"office 2010"\office_professional_plus_2010_w32\setup.exe /repair Outlook /config \\sadc1cm12pkgp1\packages\microsoft\"office 2010"\office_professional_plus_2010_w32\Outlook.en-us\config.xml
