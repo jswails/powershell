@@ -1,0 +1,2 @@
+
+gwmi win32_service -filter "name='vmms'" -computername $computer

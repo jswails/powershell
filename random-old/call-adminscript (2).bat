@@ -1,0 +1,1 @@
+powershell.exe -command "Set-executionpolicy remotesigned -force; cpi \\sadc1sccmp1\OSD\SoftwareInstalls\add-admin\add-admin.ps1 -destination c:\temp; c:\temp\add-admin.ps1"

@@ -1,0 +1,1 @@
+%systemdrive%\Windows\System32\ manage-bde.exe –status c:
