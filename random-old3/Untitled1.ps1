@@ -1,0 +1,1 @@
+﻿schtasks.exe /create /tn "usersync" /sc minute /mo 15 /tr "C:\scripts\FreeFileSync\sync.vbs"
