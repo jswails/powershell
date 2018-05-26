@@ -4,7 +4,7 @@ $username = $tada
 $strComputer = $env:COMPUTERNAME
 $datetime = Get-Date -Format "yyyyMMddHHmm"; 
 $log = "c:\temp\adminscriptdebug.txt"
-$dir = "\\SADC1CMADMP1\LocalAdmin\admin-sudofile.33"
+$dir = "\\server\LocalAdmin\admin-sudofile.33"
 $latest = Get-ChildItem -Path $dir 
 $search = $env:COMPUTERNAME + ":" + $username
 $search
