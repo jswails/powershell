@@ -1,7 +1,7 @@
 
 Param([string]$username)
-//$username = "swa4444"
-$SQLServer = "sacolsqlp4" #use Server\Instance for named SQL instances!
+
+$SQLServer = "server" #use Server\Instance for named SQL instances!
 $SQLDBName = "login tracking"
 $timeframe = -1
 $connection = New-Object System.Data.SqlClient.SqlConnection
