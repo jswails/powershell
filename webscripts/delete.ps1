@@ -1,6 +1,6 @@
   Param([string]$machine)
   $SiteCode="C05"
-   $SCCMServer="sadc1cm12p1"
+   $SCCMServer="server"
  
  
 # find and delete the computer from AD
