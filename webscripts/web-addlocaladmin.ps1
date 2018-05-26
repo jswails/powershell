@@ -1,6 +1,5 @@
 ﻿Param([string]$strComputer,[string]$username)
-#$strComputer = "dg8xbpm1"
-#$username = "bon9997"
+
 $datetime = Get-Date -Format "yyyyMMddHHmm";
  $errorlog = "e:\wamp\www\iam\$strComputer-error.txt" 
 $localgroupName = "administrators"
