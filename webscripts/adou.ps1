@@ -1,7 +1,7 @@
 #Count users in the Access domain
 import-module activedirectory
 
-Get-ADOrganizationalUnit -filter * -SearchBase 'OU=Windows XP Users (lightly managed),DC=corp,DC=stateauto,DC=com' |
+Get-ADOrganizationalUnit -filter * -SearchBase 'OU=Windows XP Users (lightly managed),DC=corp,DC=name,DC=com' |
 
 foreach {
 
@@ -20,7 +20,7 @@ foreach {
 } | out-file -append e:\wamp\tmp\adou.csv
 
 
-Get-ADOrganizationalUnit -filter * -SearchBase 'OU=Windows XP Developers,DC=corp,DC=stateauto,DC=com' |
+Get-ADOrganizationalUnit -filter * -SearchBase 'OU=Windows XP Developers,DC=corp,DC=name,DC=com' |
 
 foreach {
 
@@ -38,7 +38,7 @@ foreach {
 
 } | out-file -append e:\wamp\tmp\adou.csv
 
-Get-ADOrganizationalUnit -filter * -SearchBase 'OU=Windows XP Users,DC=corp,DC=stateauto,DC=com' |
+Get-ADOrganizationalUnit -filter * -SearchBase 'OU=Windows XP Users,DC=corp,DC=name,DC=com' |
 
 foreach {
 
@@ -55,7 +55,7 @@ foreach {
     }
 
 } | out-file -append e:\wamp\tmp\adou.csv
-Get-ADOrganizationalUnit -filter * -SearchBase 'OU=User Objects,DC=corp,DC=stateauto,DC=com' |
+Get-ADOrganizationalUnit -filter * -SearchBase 'OU=User Objects,DC=corp,DC=name,DC=com' |
 
 foreach {
 
@@ -74,7 +74,7 @@ foreach {
 } | out-file -append e:\wamp\tmp\adou.csv
 
 
-Get-ADOrganizationalUnit -filter * -SearchBase 'OU=Windows 7 Users,DC=corp,DC=stateauto,DC=com' |
+Get-ADOrganizationalUnit -filter * -SearchBase 'OU=Windows 7 Users,DC=corp,DC=name,DC=com' |
 
 foreach {
 
@@ -91,7 +91,7 @@ foreach {
     }
 
 } | out-file -append e:\wamp\tmp\adou.csv
-Get-ADOrganizationalUnit -filter * -SearchBase 'OU=Windows 7 Users (lightly managed),DC=corp,DC=stateauto,DC=com' |
+Get-ADOrganizationalUnit -filter * -SearchBase 'OU=Windows 7 Users (lightly managed),DC=corp,DC=ma,e,DC=com' |
 
 foreach {
 
