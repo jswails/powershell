@@ -4,7 +4,7 @@
 #Cscript Prnjobs  -l -p printer name
  $machinename = $env:COMPUTERNAME
  $err = ""
- $wipserver = "\\10.30.164.71\data-in"
+ $wipserver = "\\server\data-in"
   $datetime = Get-Date -Format "yyyyMMdd";
    $datetimefull = Get-Date -Format "yyyyMMddHHmmss";
  $prettydate = get-date
