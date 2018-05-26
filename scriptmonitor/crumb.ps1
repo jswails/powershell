@@ -3,11 +3,11 @@
  $smdir =  "C:\Packages\scriptmonitor"
  $datetime = Get-Date -Format "yyyyMMdd";
  $datetimefull = Get-Date -Format "yyyyMMddHHmmss";
- $configroot = "\\admin3\scriptmonitor"
+ $configroot = "\\server\scriptmonitor"
  $datetime | Out-File -append $smdir\bug.log
  $machinename = $env:COMPUTERNAME
  $err = ""
- $wipserver = "\\10.30.164.71\data-in"
+ $wipserver = "\\server\data-in"
  $sccmexeclog = "c:\windows\ccm\logs\execmgr.log"
  $os = (Get-CimInstance Win32_OperatingSystem).version
  $proc = $env:PROCESSOR_ARCHITECTURE
