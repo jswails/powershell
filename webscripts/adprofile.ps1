@@ -1,6 +1,6 @@
 import-module activedirectory
 sl ad:
-sl "dc=corp,DC=stateauto,DC=com"
+sl "dc=corp,DC=name,DC=com"
 sl "ou=User Objects"
 sl "ou=Managed"
 # check all who have profile path
