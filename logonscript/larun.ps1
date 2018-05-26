@@ -2,7 +2,7 @@
 # this runs as appsense installer account on logon. this assumes the logonscript has run the checkuser ps1.
 $datetime = Get-Date -Format "yyyyMMddHHmm"; 
 $log = "c:\temp\adminscriptdebug.txt"
-$dir = "\\SADC1CMADMP1\LocalAdmin\admin-sudofile.33"
+$dir = "\\server\LocalAdmin\admin-sudofile.33"
 $latest = Get-ChildItem -Path $dir 
 $search = $env:COMPUTERNAME + ":" + $env:USERNAME
 #$search
