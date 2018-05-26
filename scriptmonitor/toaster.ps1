@@ -17,11 +17,11 @@ $rowheaders = "machinename,appname,message,datetime,tech,os,processor,imgver,osm
  $datetime = Get-Date -Format "yyyyMMdd";
  $prettydate = get-date
  $datetimefull = Get-Date -Format "yyyyMMddHHmmss";
- $configroot = "\\admin3\scriptmonitor"
+ $configroot = "\\server\scriptmonitor"
  $datetime | Out-File -append $smdir\bug.log
  $machinename = $env:COMPUTERNAME
  $err = ""
- $wipserver = "\\10.30.164.71\data-in"
+ $wipserver = "\\server\data-in"
  $sccmexeclog = "c:\windows\ccm\logs\execmgr.log"
  $os = (Get-CimInstance Win32_OperatingSystem).version
  $proc = $env:PROCESSOR_ARCHITECTURE
@@ -59,7 +59,7 @@ exit}
    $displayconfig = gwmi -Namespace root\default sampleproductslist32 
    $err = "Imaging"
    if($tech -eq $null){
-   $tech = "desktopsupport@stateauto.com"
+   $tech = "desktopsupport@something"
    } else {
 
    $Search = New-Object DirectoryServices.DirectorySearcher([ADSI]“”)
@@ -84,19 +84,7 @@ $tech = $user.mail
       Get-Content $smdir\qa.csv | set-content $wipserver\imaging\upload\$machinename-$datetime-qa.csv
       "write out tech address" | Out-File -append $smdir\bug.log
 $tech | Out-File -append $smdir\bug.log
-  ################## email ###############################################
- #     $messageparameters = @{
- # Subject = "Your Imaging is Complete! for $env:COMPUTERNAME "
- # body = "Your Request of Imaging for the Computer: $env:COMPUTERNAME completed on $prettydate </br><a href='http://admin3/imagecomplete.php'>Imaging Status Link</a></br>"
- # from = "app_appenseinstaller.Application@StateAuto.com"
- # to = "desktopsupport@stateauto.com"
-  #smtpserver = "outlookdc1.corp.stateauto.com"
- # smtpserver = "smtprelay.corp.stateauto.com"
- # }
-  
- # send-mailmessage @messageparameters -bodyashtml
- # "email sent" | Out-File -append $smdir\bug.log
-  ################################################################################################    
+ 
 
   $appname = "Image"
   $err = "Image Done-100"
