@@ -52,10 +52,10 @@ $log.SaveChanges()
              $messageparameters = @{
   Subject = "Printer Queue error found for $env:COMPUTERNAME "
   body = "Error found for $env:COMPUTERNAME on $prettydate  with logged on user: $user. </br> Check the users machine for errors."
-  from = "app_appenseinstaller.Application@StateAuto.com"
-  to = "clientengineering@stateauto.com"
+  from = "email"
+  to = "group"
 
-  smtpserver = "smtprelay.corp.stateauto.com"
+  smtpserver = "smtprelay"
   }
     if( $printername -eq $null){
    $printername = "na"
