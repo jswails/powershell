@@ -1,6 +1,6 @@
 
 Param([string]$ip)
-$SQLServer = "sacolsqlp4" #use Server\Instance for named SQL instances!
+$SQLServer = "server" #use Server\Instance for named SQL instances!
 $SQLDBName = "login tracking"
 $timeframe = -1
 $connection = New-Object System.Data.SqlClient.SqlConnection
