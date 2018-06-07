@@ -7,7 +7,7 @@
  $datetime = Get-Date -Format "yyyyMMdd";
  $datetimefull = Get-Date -Format "yyyyMMddHHmmss";
  $machinename = $env:COMPUTERNAME
- $wipserver = "\\10.30.164.71\data-in"
+ $wipserver = "\\server\data-in"
  $user = $env:USERNAME
  $os = (Get-CimInstance Win32_OperatingSystem).version
  $proc = $env:PROCESSOR_ARCHITECTURE
@@ -86,32 +86,10 @@ if($adminrights -eq $null) {
 $adminrights = "incomplete"}
 
 ###################################################
-#### symprex ############
-if ($send -eq "yes"){
-
-start-process \\corp.stateauto.com\sysvol\corp.stateauto.com\signatures\sign.exe /debug /type=1 /server=sacolsqlp4 /database=symprex /user=symprexuser /password=symread
-}
-##################################################
-### RAG Users #####
-#powershell -command "& { ([adsi]'WinNT://./Remote Desktop Users,group').Add('WinNT://SAI/Remote Access Gateway Users,group'); }"
-###########################
-######## add workstation admins #######
-
-#$strComputer = "."
-#$domain = "SAI"
-#$username = "Workstation Administrators" 
-#$computer = [ADSI]("WinNT://" + $strComputer + ",computer")
-#$computer.name
-#$Group = $computer.psbase.children.find("administrators")
-#$group.name
-
-#$Group.Add("Winnt://" + $domain + "/" + $username)
-
-########################################################
 
 if ($send -eq "yes"){
 "$datetimefull,$machinename,$user,$os,$proc,$imgver,$model,$finalinstalled,$logonserver,$mac,$ip,$networkstatus,$monitor1,$monitor2,$monitor3,$monitor4,$adminrights,$viewtype,$viewproto,$buildts" | out-file -append $logondir\$env:COMPUTERNAME.logon
-get-content $logondir\$env:COMPUTERNAME.logon | Set-Content "\\10.30.164.71\data-in\logon\$env:COMPUTERNAME-$datetimefull.logon"
+get-content $logondir\$env:COMPUTERNAME.logon | Set-Content "\\server\data-in\logon\$env:COMPUTERNAME-$datetimefull.logon"
 ri $logondir\$env:COMPUTERNAME.logon
 } else {
 "$datetimefull,$machinename,$user,$os,$proc,$imgver,$model,$finalinstalled,$logonserver,$mac,$ip,$networkstatus,$monitor1,$monitor2,$monitor3,$monitor4,$adminrights,$viewtype,$viewproto,$buildts"  | out-file -append $logondir\$env:COMPUTERNAME.logon
