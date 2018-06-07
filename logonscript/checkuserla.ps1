@@ -29,7 +29,7 @@ exit
  " user and machine pairing was not found in the sudo file" | out-file -append $log
  [Environment]::SetEnvironmentVariable("adminrights", "no", "user")
  #check to see if user is part of local admin group. if it is remove it.
- $u = "SAI\" + "$env:USERNAME" 
+ $u = "domainname\" + "$env:USERNAME" 
  $n = net localgroup administrators | Where {$_ -like $u}
 
 if ($n -eq $null){
