@@ -5,7 +5,7 @@ $tada = get-content $getnamefile
 $username = $tada
 $strComputer = $env:COMPUTERNAME
 "starting add user script" | out-file -append $log
-$domain = "SAI"
+$domain = ""
 $username = $tada
 $computer = [ADSI]("WinNT://" + $strComputer + ",computer")
 $computer.name
