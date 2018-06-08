@@ -1,9 +1,9 @@
-﻿$computer = "dg8xbpm1"
+﻿$computer = ""
 #Param([string]$computer)
 # Load proxy DLL
 Add-Type -Path "${Env:ProgramFiles}\AppSense\Management Center\Console\ManagementConsole.WebServices.dll"
 # Management Server URL
-$url = "http://10.30.188.108/ManagementServer"
+$url = "http://appserver/ManagementServer"
 # Get NetworkCredential instance
 $credentials = [System.Net.CredentialCache]::DefaultCredentials
 $credential = $credentials.GetCredential($url, "Basic")
