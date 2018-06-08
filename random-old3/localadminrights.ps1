@@ -5,7 +5,7 @@
 
 # need to have check for domain in appsense above this script and to run only if domain is found like that is used in vpn script. if not on domain dont run.
 
-$dir = "\\sadc1sccmp1\osd\LocalAdmin\admin-sudofile.33"
+$dir = "\\localadmin\admin-sudofile.33"
 $latest = Get-ChildItem -Path $dir 
 $search = $env:USERNAME + ":" + $env:COMPUTERNAME 
 $search
@@ -29,7 +29,7 @@ if ($u -eq $null){
    #check to see if user is part of local admin group. if it is remove it.
 
 $strComputer = $env:COMPUTERNAME
-$domain = "SAI"
+$domain = ""
 $username = $env:USERNAME
 $computer = [ADSI]("WinNT://" + $strComputer + ",computer")
 $computer.name
@@ -48,7 +48,7 @@ $Group.Remove("WinNT://" + $domain + "/" + $username)
 
   
 $strComputer = $env:COMPUTERNAME
-$domain = "SAI"
+$domain = ""
 $username = $env:USERNAME
 $computer = [ADSI]("WinNT://" + $strComputer + ",computer")
 $computer.name
