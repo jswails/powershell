@@ -1,5 +1,5 @@
-# Start VM’s that are powered off and match the given computer name pattern
-$vmList =  get-vm | where-object {$_.powerstate -eq "poweredoff" -and $_.Name -like "xp-rhneccu*"}
+# Start VMâ€™s that are powered off and match the given computer name pattern
+$vmList =  get-vm | where-object {$_.powerstate -eq "poweredoff" -and $_.Name -like "blarg*"}
 ForEach($vm in $vmList)
 {
 start-vm -RunAsync -VM $vm -Confirm:$false
