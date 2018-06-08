@@ -1,5 +1,5 @@
 ﻿
-# 'C:\Users\swa4444\Favorites\'
+
 
  #get-content something.txt | where-object {$_ -match '[\\|\s
 
