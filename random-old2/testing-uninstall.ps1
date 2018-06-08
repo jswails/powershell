@@ -1,5 +1,5 @@
 ﻿#Param([string]$computername,[string]$app)
-	$computername = "dg8xbpm1"
+	$computername = ""
  $app = "Microsoft Filter Pack 2.0"
  get-date | out-file -Append c:\temp\$computername.csv
  "$app" |  out-file -Append c:\temp\$computername.csv
