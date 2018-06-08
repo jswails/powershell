@@ -257,19 +257,14 @@ $strcomputer = $env:COMPUTERNAME
     } 
     
     # start appsense support script
-    \\corp.stateauto.com\clientapps\DEV\ClientSupportUtility\appsense-support.vbs
+    
     
  
 
 add-content "c:\temp\QA-Script $datetime.txt" $writemac
-\\corp.stateauto.com\clientapps\DEV\ClientSupportUtility\chang.vbs
-
-mkdir \\sai\admin\Software\Workstation\ClientSupportUtility\$servername
-copy c:\temp\qa-script* \\sai\admin\Software\Workstation\ClientSupportUtility\$servername
-\\corp.stateauto.com\clientapps\DEV\ClientSupportUtility\logbackup.ps1
 
 
-copy $env:LOCALAPPDATA/temp/appsense*.zip \\sai\admin\Software\Workstation\ClientSupportUtility\$servername
+
 
 
 
