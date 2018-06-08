@@ -1,4 +1,4 @@
-﻿$ComputerName = "E6Z2Z7V1"
+﻿$ComputerName = ""
  
 ## Specify the timeframe you'd like to search between
 $StartTimestamp = '6-10-2015 04:00:00'
@@ -8,7 +8,7 @@ $EndTimeStamp = '6-10-2015 04:04:00'
 $SkipEventLog = 'Microsoft-Windows-TaskScheduler/Operational'
  
 ## The output file path of the text file that contains all matching events
-$OutputFilePath = 'C:\E6Z2Z7V1-eventlogs.txt'
+$OutputFilePath = 'C:\name-eventlogs.txt'
  
 ## Create the Where filter ahead of time to only get events within the timeframe
 $filter = {($_.TimeCreated -ge $StartTimestamp) -and ($_.TimeCreated -le $EndTimeStamp)}
