@@ -22,7 +22,7 @@
  $alert = "$machinename,$err,$datetimefull"
  $machinename = $env:COMPUTERNAME
  $err = ""
- $wipserver = "\\10.30.164.71\data-in"
+ $wipserver = "\\server\data-in"
  $log = "C:\Packages\appsense_am_fix.log"
  $datetime = Get-Date -Format "yyyyMMdd";
  $datetimefull = Get-Date -Format "yyyyMMddHHmmss";
