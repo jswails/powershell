@@ -1,3 +1,0 @@
-psexec @temp.txt Reg.exe Add hklm\SOFTWARE\RTW /v Host /t REG_SZ /d SADC1SLMTP1 /f
-then for the other key:
-psexec @temp.txt Reg.exe Add hklm\SOFTWARE\RTW /v Apps /t REG_SZ /d "RTW Prod" /f
