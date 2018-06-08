@@ -4,7 +4,7 @@
 #Cscript Prnjobs  -l -p printer name
  $machinename = $env:COMPUTERNAME
  $err = ""
- $wipserver = "\\10.30.164.71\data-in"
+ $wipserver = "\\server\data-in"
   $datetime = Get-Date -Format "yyyyMMdd";
    $datetimefull = Get-Date -Format "yyyyMMddHHmmss";
  $prettydate = get-date
@@ -44,10 +44,10 @@ $log.SaveChanges()
            $messageparameters = @{
   Subject = "Printer Queue error found for $env:COMPUTERNAME "
   body = "Error found for $env:COMPUTERNAME on $prettydate  with logged on user: $user"
-  from = "app_appenseinstaller.Application@StateAuto.com"
-  to = "john.swails@stateauto.com"
+  from = "app.com"
+  to = "bob.com"
 
-  smtpserver = "smtprelay.corp.stateauto.com"
+  smtpserver = ""
   }
   
  send-mailmessage @messageparameters -bodyashtml
@@ -71,10 +71,10 @@ $log.SaveChanges()
            $messageparameters = @{
   Subject = "Printer Queue error found for $env:COMPUTERNAME "
   body = "Error found for $env:COMPUTERNAME on $prettydate  with logged on user: $user"
-  from = "app_appenseinstaller.Application@StateAuto.com"
-  to = "john.swails@stateauto.com"
+  from = "app.com"
+  to = "bob.com"
 
-  smtpserver = "smtprelay.corp.stateauto.com"
+  smtpserver = ""
   }
   
  send-mailmessage @messageparameters -bodyashtml
