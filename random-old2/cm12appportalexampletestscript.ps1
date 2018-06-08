@@ -1,4 +1,4 @@
 ﻿# Create web service proxy
-$catalogurl = "http://sadc1sccmd1.corp.stateauto.com/CMApplicationCatalog";
+$catalogurl = "http://sccmserver/CMApplicationCatalog";
 $url = $catalogurl+"/ApplicationViewService.asmx?WSDL";
 $service = New-WebServiceProxy $url -UseDefaultCredential;
