@@ -26,9 +26,7 @@ $result = Ping-Server $computername
                 }
  if($result){
  if(test-path("\\$computername\c$\packages\scriptmonitor")){
- #xcopy \\sadc1cm12pkgp1\Packages\stateauto\scriptmonitor\audit-print-queue.ps1 \\$computername\C$\packages\scriptmonitor\ /Y
- #ri \\$computername\C$\packages\scriptmonitor\1.1
- #"start" | out-file \\$computername\C$\packages\scriptmonitor\printq.flag
+ 
  ri  \\$computername\C$\packages\scriptmonitor\printq.flag
  } else {
 
