@@ -1,6 +1,6 @@
 ﻿$CollName = "mm-test"
-$SiteCode="C05"
-   $SCCMServer="sadc1cm12p1"
+$SiteCode=""
+   $SCCMServer=""
 
 # Get a list of collections and find the object to build the collection list.
 $Collection = Get-WmiObject -ComputerName $SCCMServer  -Namespace `
