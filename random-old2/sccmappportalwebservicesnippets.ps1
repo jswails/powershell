@@ -1,5 +1,5 @@
 ﻿# Create web service proxy
-$catalogurl = "http://sadc1sccmd1.corp.stateauto.com/CMApplicationCatalog";
+$catalogurl = "http://sccmserver/CMApplicationCatalog";
 $url = $catalogurl+"/ApplicationViewService.asmx?WSDL";
 $service = New-WebServiceProxy $url -UseDefaultCredential;
 
@@ -20,7 +20,7 @@ $reqresult = $service.RequestApplicationForUser($reason, $appid, $deviceid, $nul
 
 
 # Retrieve provider info, assumes one provider 
-$siteserver = "sadc1cm12p1.corp.stateauto.com" 
+$siteserver = "sccm site server" 
 $provider = gwmi -ComputerName $siteserver -namespace "root\sms" -query "SELECT * FROM SMS_ProviderLocation"; 
 $prov_machine = $provider.Machine; 
 $sitecode = $provider.SiteCode; 
