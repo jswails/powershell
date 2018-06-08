@@ -28,10 +28,3 @@ get-eventlog -logname security | export-csv $tools\security.csv -notypeinformati
 
 # execute the backup function
 dir $tools\*.csv | add-zip $tools\$env:COMPUTERNAME-$datetime.zip
-#if (test-path \\sadc1aspsd1\logs)
-#{
-#mkdir \\sadc1aspsd1\logs\$env:COMPUTERNAME
-
-#copy $tools\*.zip \\sadc1aspsd1\logs\$env:COMPUTERNAME
-
-#}
