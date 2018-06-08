@@ -2,7 +2,7 @@
 
 
  #check to see if user is in local admin group
- $u = "SAI\" + "$env:USERNAME" 
+ $u = "domain\" + "$env:USERNAME" 
  $n = net localgroup administrators | Where {$_ -like $u}
 
 if ($n -eq $null){
