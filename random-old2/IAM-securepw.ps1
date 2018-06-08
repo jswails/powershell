@@ -1,1 +1,0 @@
-﻿read-host -assecurestring | convertfrom-securestring | out-file \\sadc1cmadmp1\e$\wamp\www\IAM\secure\securestring.txt
