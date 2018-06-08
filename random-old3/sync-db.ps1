@@ -93,18 +93,7 @@ write-host "first sync not found"
   
   if ($finalerror -eq 1) {
 
-  $SQLServer = "savfssccmt1" #use Server\Instance for named SQL instances!
- $SQLDBName = "logontime"
- $SqlQuery = "INSERT INTO dbo.syncerror (computername,username,realname,finalerror,errorname,date) VALUES ('$compname','$username','$realname','$finalerror','$reporterror','$y')"
-$SqlConnection = New-Object System.Data.SqlClient.SqlConnection
-$SqlConnection.ConnectionString = "Server = $SQLServer; Database = $SQLDBName; Integrated Security = True"
-$sqlconnection.open()
-$SqlCmd = New-Object System.Data.SqlClient.SqlCommand
-$SqlCmd.CommandText = $SqlQuery
-$SqlCmd.Connection = $SqlConnection
-$SqlCmd.executenonquery()
-
- $SqlConnection.Close()
+  
   [Environment]::SetEnvironmentVariable("LastSync", $a, "machine")
     }
   }
