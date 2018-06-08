@@ -50,7 +50,7 @@ $getblstatus = " manage-bde -status "
 Add-Content "c:\temp\QA-Script $datetime.txt" "$servername,$officeinstalled,$vpninstalled";			
 # find domain user in the local Administrators group on the local computer  
 
-$domainname = "sai"
+$domainname = ""
 $erroractionpreference = "SilentlyContinue"
  $computername = "."
 $userName = "workstation administrators"
