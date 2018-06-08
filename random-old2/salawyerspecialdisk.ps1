@@ -4,7 +4,7 @@ $disktemp = "c:\temp\SALawyerSpecialDisk"
 $scriptsdir ="c:\scripts"
 $time = get-date
 Write-host "###############################################################"
-write-host "#      State Auto Lawyers Special Disk Execution Tool         #"
+write-host "#      Lawyers Special Disk Execution Tool         #"
 write-host "#                                                             #"
 write-host "###############################################################"  
 Write-host -ForegroundColor Red " Use of this Tool is monitored and logged."
