@@ -1,5 +1,5 @@
 ﻿# search a file share for all files modified within last x days
-# take variable from spreadsheet  that has users share path such as \\dc1userhome.corp.stateauto.com\swa4444
+
 # figure out some way to output this to have it be sorted with username and file
 
 $inputfile = "c:\temp\searchusers.txt"
