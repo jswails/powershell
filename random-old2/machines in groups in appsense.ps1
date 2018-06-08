@@ -3,7 +3,7 @@
 # Load proxy DLL
 Add-Type -Path "e:\Program Files\AppSense\Management Center\Console\ManagementConsole.WebServices.dll"
 # Management Server URL
-$url = "http://10.30.188.108/ManagementServer"
+$url = "http://server/ManagementServer"
 # Get NetworkCredential instance
 $credentials = [System.Net.CredentialCache]::DefaultCredentials
 $credential = $credentials.GetCredential($url, "Basic")
