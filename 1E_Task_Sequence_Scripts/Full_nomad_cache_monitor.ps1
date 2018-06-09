@@ -2,7 +2,7 @@
 
 # john swails
 
-# instructions for use are on AIS Sharepoint under 1E -> Nomad Cache Monitor -> How to use Nomad Cache Monitor - N Servers
+
 
 # Thanks to Fred Seger for finding the WMI part.
 
