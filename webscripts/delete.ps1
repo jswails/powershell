@@ -1,5 +1,5 @@
   Param([string]$machine)
-  $SiteCode="C05"
+  $SiteCode=""
    $SCCMServer="server"
  
  
