@@ -19,9 +19,6 @@ $SiteCode = Get-PSDrive -PSProvider CMSITE
 Set-Location "$($SiteCode.Name):\"
 
  
-
-#$TaskSequenceName = 'RETAIL-OSD-CHICAGO-FMER-BRANCH-WKS-Build-16.10.1'
-
 $TaskSequenceName = read-host -Prompt "Enter in name of task sequence"
 
 $a = Get-CMTaskSequence -name $TaskSequenceName
