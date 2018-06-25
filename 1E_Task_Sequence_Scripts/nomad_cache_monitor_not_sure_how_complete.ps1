@@ -4,10 +4,6 @@
 
 # john swails
 
-# instructions for use are on AIS Sharepoint under 1E -> Nomad Cache Monitor -> How to use Nomad Cache Monitor - N Servers
-
-# Thanks to Fred Seger for finding the WMI part.
-
 $datetime = Get-Date -Format "yyyyMMdd";
 
 $datetimefull = Get-Date -Format "yyyyMMddHHmmss";
@@ -102,9 +98,6 @@ $servers2 = Get-Content $serverlist
 
  
 
-#$servers1 = import-csv d:\spectare\ncm\serverlist.txt
-
- 
 
 $server_count = $servers2.length
 
