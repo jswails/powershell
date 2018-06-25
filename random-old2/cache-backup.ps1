@@ -15,7 +15,7 @@ exit
 write-host -ForegroundColor $colour " ####################################### ####################################### #######################################"
 write-host -ForegroundColor $colour "######################################### ######################################### #########################################"
 write-host -ForegroundColor $colour " ####################################### ####################################### #######################################"
-icacls C:\Windows\CSC\v2.0.6\namespace\DC1USERHOME.CORP.STATEAUTO.COM\$user\* /t /c /q /grant Administrators:F
+icacls C:\Windows\CSC\v2.0.6\namespace\.COM\$user\* /t /c /q /grant Administrators:F
 write-host -ForegroundColor $colour " ####################################### ####################################### #######################################"
 write-host  " you can ignore ICACL errors as there will always be some errors unless it fails on all then you have to set perms manually"
 #this checks size of cache to alert you ahead of time how large the copy is going to be
@@ -25,7 +25,7 @@ write-host -ForegroundColor $colour "######################################### #
 write-host -ForegroundColor $colour " ####################################### ####################################### #######################################"
 write-host  " Size of Local Cache"
 
-$colItems = (gci -r C:\Windows\CSC\v2.0.6\namespace\DC1USERHOME.CORP.STATEAUTO.COM\$user\* -ErrorAction SilentlyContinue | Measure-Object -property length -sum)
+$colItems = (gci -r C:\Windows\CSC\v2.0.6\namespace\.COM\$user\* -ErrorAction SilentlyContinue | Measure-Object -property length -sum)
 "{0:N2}" -f ($colItems.sum / 1MB) + " MB"
 
 write-host -ForegroundColor $colour " ####################################### ####################################### #######################################"
@@ -76,7 +76,7 @@ function Read-Choice {
 $choice = Read-Choice "Is there enough space to continue"  @("&Y","&N")
 if ($choice -eq "0"){
 write-host " Robocopy is going to begin now"
-robocopy C:\Windows\CSC\v2.0.6\namespace\DC1USERHOME.CORP.STATEAUTO.COM\$user\ c:\temp\cachebackup /S /R:0 /W:0 /LOG:c:\temp\cachebackup.log
+robocopy C:\Windows\CSC\v2.0.6\namespace\.COM\$user\ c:\temp\cachebackup /S /R:0 /W:0 /LOG:c:\temp\cachebackup.log
 }
 if ($choice -eq "1"){
 write-host " you chose to cancel the robocopy due to space concerns, manually copy the cache"
