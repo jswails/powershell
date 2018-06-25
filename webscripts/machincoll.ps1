@@ -1,5 +1,5 @@
 Param([string]$checkbox)
-$SiteCode="C05"
+$SiteCode=""
    $SCCMServer="server"
 $checkbox | export-csv -path e:\wamp\www\cm12\2.txt
 # Get a list of collections and find the object to build the collection list.
