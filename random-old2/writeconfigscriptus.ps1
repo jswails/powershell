@@ -5,7 +5,7 @@
 # then create config file with date.deploy and inside the file single line entries of collectionid to be watched
 
 $datetime = Get-Date -Format "yyyyMMdd";
-$configroot = "\\admin3\scriptmonitor\"
+$configroot = "\\server\scriptmonitor\"
 
 if(!(test-path("$configroot\$datetime"))) {
 mkdir "$configroot\$datetime"
