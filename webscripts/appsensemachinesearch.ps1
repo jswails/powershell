@@ -1,4 +1,4 @@
-﻿#$computer = "dg8xbpm1"
+
 Param([string]$computer)
 # Load proxy DLL
 Add-Type -Path "e:\Program Files\AppSense\Management Center\Console\ManagementConsole.WebServices.dll"
