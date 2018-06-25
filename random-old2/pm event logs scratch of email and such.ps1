@@ -1,4 +1,4 @@
-﻿$computername = "L9FXPTY1"
+﻿$computername = ""
 $log = "1"
  #boot times - took longer than expected reported by windows
 $Events = Get-WinEvent -computer $computername -FilterHashtable @{Logname='Microsoft-Windows-Diagnostics-Performance/Operational';Id=100}            
