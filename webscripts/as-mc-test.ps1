@@ -16,10 +16,10 @@ $DiscoveredMachinesWebService.DeleteMachine("f45b1a5f-8a51-4717-a4ff-ae562053dac
 $MachinesWebService = [ManagementConsole.WebServices]:: Machines
 
 # find machine
-$MachinesDataSet = $MachinesWebService.FindMachines("%EDCH7RW1%")
+$MachinesDataSet = $MachinesWebService.FindMachines("%machinename%")
 $Machines = $MachinesDataSet.Machines
 
-$MachinesDataSet = $MachinesWebService.DeleteMachine("f45b1a5f-8a51-4717-a4ff-ae562053dacf","10/14/2014 7:34:32 PM")
+$MachinesDataSet = $MachinesWebService.DeleteMachine("machineguidhere","timestamp of machine to del")
 $Machines = $MachinesDataSet.Machines
 
 
