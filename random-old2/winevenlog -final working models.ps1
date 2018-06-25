@@ -52,14 +52,3 @@ ForEach ($Event in $Events) {
 $Events | Select-Object * -first 20 -ExcludeProperty message| Out-GridView
 
 $events | export-csv 
-
-100 y
-101 y
-102 y
-103 y
-106 y
-109 y
-110 y
-200 y
-201 y
-203 y
