@@ -4,7 +4,7 @@ $resourcename = ""
 $sitecode = ""
 $siteserver = ""
 
-$CollectionQuery = Get-WmiObject -Namespace Root\SMS\Site_$SiteCode -Class SMS_Collection -ComputerName $SiteServer -Filter "Name like 'mm%'"
+$CollectionQuery = Get-WmiObject -Namespace Root\SMS\Site_$SiteCode -Class SMS_Collection -ComputerName $SiteServer -Filter "Name like '%'"
 
 #Create the Direct MemberShip Rule
 $NewRule = ([WMIClass]"\\$SiteServer\root\SMS\Site_${SiteCode}:SMS_CollectionRuleDirect").CreateInstance()
